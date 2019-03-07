@@ -6,6 +6,7 @@ local AndroidBinariesPath = $(AndroidNDKRoot)/toolchains/llvm/prebuilt/windows-x
 
 using clang : aarch64 : $(AndroidBinariesPath)/clang++ :
 	<archiver>$(AndroidBinariesPath)/llvm-ar
+	<ranlib>$(AndroidNDKRoot)/toolchains/aarch64-linux-android-4.9/prebuilt/windows-x86_64/bin/aarch64-linux-android-ranlib
 	<compileflags>-fexceptions
 	<compileflags>-frtti
 	<compileflags>-ffunction-sections
@@ -29,8 +30,7 @@ using clang : aarch64 : $(AndroidBinariesPath)/clang++ :
 	<compileflags>$(AndroidNDKRoot)/toolchains/aarch64-linux-android-4.9/prebuilt/windows-x86_64
 	<compileflags>-target
 	<compileflags>aarch64-none-linux-android
-	<compileflags>-fPIC
-	<compileflags>-mstackrealign
+	<compileflags>-fpic
 	<compileflags>--sysroot
 	<compileflags>$(AndroidNDKRoot)/sysroot
 	<compileflags>-isystem

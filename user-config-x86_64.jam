@@ -6,6 +6,7 @@ local AndroidBinariesPath = $(AndroidNDKRoot)/toolchains/llvm/prebuilt/windows-x
 
 using clang : x86_64 : $(AndroidBinariesPath)/clang++ :
 	<archiver>$(AndroidBinariesPath)/llvm-ar
+	<ranlib>$(AndroidNDKRoot)/toolchains/x86_64-4.9/prebuilt/windows-x86_64/bin/x86_64-linux-android-ranlib
 	<compileflags>-fexceptions
 	<compileflags>-frtti
 	<compileflags>-ffunction-sections

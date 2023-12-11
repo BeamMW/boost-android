@@ -1,8 +1,8 @@
 //  boost/config/user.hpp  ---------------------------------------------------//
 
 //  (C) Copyright John Maddock 2001. 
-//  Use, modification and distribution are subject to the 
-//  Boost Software License, Version 1.0. (See accompanying file 
+//  Use, modification and distribution are subject to the
+//  Boost Software License, Version 1.0. (See accompanying file
 //  LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 
 //  Do not check in modified versions of this file,
@@ -12,6 +12,13 @@
 //  Use this file to define a site and compiler specific
 //  configuration policy:
 //
+
+// Android defines
+// There is problem with std::atomic on android (and some other platforms).
+// See this link for more info:
+// https://code.google.com/p/android/issues/detail?id=42735#makechanges
+#define BOOST_ASIO_DISABLE_STD_ATOMIC 1
+
 
 // define this to locate a compiler config file:
 // #define BOOST_COMPILER_CONFIG <myheader>
